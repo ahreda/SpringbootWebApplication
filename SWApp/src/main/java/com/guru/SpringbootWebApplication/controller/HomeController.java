@@ -4,13 +4,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class BooksController {
+public class HomeController {
 
-    @GetMapping("/books")
-    public String getBooks(){
+    @GetMapping("/")
+    public String home(){
 
-        return "bookList";
-
+        return "home";
     }
-
 }
