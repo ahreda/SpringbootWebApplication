@@ -27,20 +27,28 @@ public class bootstrap implements CommandLineRunner {
 
         Author author1 = new Author("Ahmad", "Reda");
         Author author2 = new Author("Sami","Robert");
+        Author author3 = new Author("Mark", "Donja");
+        Author author4 = new Author("Tim", "Alex");
 
         Book book1 = new Book("Deep Learning","afd12");
         Book book2 = new Book("Neural Networks","aju52");
         book1.getAuthors().add(author1);
-        book2.getAuthors().add(author2);
+        book1.getAuthors().add(author2);
+        book2.getAuthors().add(author3);
+        book2.getAuthors().add(author4);
 
         author1.getBooks().add(book1);
-        author2.getBooks().add(book2);
+        author2.getBooks().add(book1);
+        author3.getBooks().add(book2);
+        author4.getBooks().add(book2);
 
 
         bookRepo.save(book1);
         bookRepo.save(book2);
         authorRepo.save(author1);
         authorRepo.save(author2);
+        authorRepo.save(author3);
+        authorRepo.save(author4);
 
         System.out.println("Data loader is started");
         System.out.println("number of books is: " + bookRepo.count());
